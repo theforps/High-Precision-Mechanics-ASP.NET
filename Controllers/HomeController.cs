@@ -21,7 +21,8 @@ namespace High_precisionMechanics.Controllers
 
         [HttpGet]
         public IActionResult Index()
-        {
+        { 
+
             var obj = _appDb.Users.FirstOrDefault();
 
             if (obj == null) return NotFound();
