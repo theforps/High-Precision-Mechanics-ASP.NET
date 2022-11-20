@@ -1,0 +1,29 @@
+﻿@model Order
+
+<form method="post">
+    <div class="mainProfile">
+        <h2>Создать заказ</h2>
+        <div style="text-align:center">
+            <div style="width:80%; margin:auto">
+                <div class="order">
+                    <label style="display:block" asp-for="@Model.file1"></label>
+                    <input type="file" asp-for="@Model.file1" />
+                    <span style="display:block; margin-bottom: 10px" asp-validation-for="file1" class="text-danger"></span>
+                </div>
+                <div class="order">
+                    <label style="display:block" asp-for="@Model.file2"></label>
+                    <input type="file" asp-for="@Model.file2" />
+                    <span style="display:block; margin-bottom: 10px" asp-validation-for="file2" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn saveButton text-white">Отправить заявку</button>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+    }
+

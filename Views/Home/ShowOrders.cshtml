@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Order>
+
+<form method="post">
+    <div class="mainProfile">
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <td>Номер заказа</td>
+                    <td>Дата заказа</td>
+                    <td>Цена</td>
+                    <td>Статус</td>
+                    <td>Начальник отдела по работе с клиентами</td>
+                    <td>Начальник отдела качества</td>
+                    <td>Начальник производства</td>
+                    <td>Начальник отдела логистики</td>
+                    <td>Начальник экономического отдела</td>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Any())
+                {
+                    @foreach (var obj in Model)
+                    {
+                        var color = "green";
+                        var value = "Одобрено";
+                        @if (@obj.CustomerServiceManager == false)
+                        {
+                            value = "Отказано";
+                            color = "red";
+                        }
+                        <tr>
+                            <td>@obj.Id</td>
+                            <td>@obj.date</td>
+                            <td>@obj.Price</td>
+                            <td style="color: @color">@obj.Status</td>
+                            <td style="color: @color">@value</td>
+                            <td style ="color: @color">@value</td>
+                            <td style ="color: @color">@value</td>
+                            <td style ="color: @color">@value</td>
+                            <td style ="color: @color">@value</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</form>
+
+

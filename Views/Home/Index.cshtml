@@ -1,0 +1,54 @@
+﻿@model User
+
+<form method="post" asp-action="Index">
+    <input asp-for="@Model.Id" hidden />
+    <div class="mainProfile">
+        <h2>Профиль</h2>
+        <div class="flex">
+            <div >
+            <div class="infoAboutUser">
+                <label asp-for="@Model.Surname"></label>
+                
+                <input style="float:right; margin-left: 4px;" type="text" asp-for="@Model.Surname" />
+                    <span style="display:block" asp-validation-for="Surname" class="text-danger"></span>
+            </div>
+            <div class="infoAboutUser">
+                <label asp-for="@Model.Name"></label>
+                    <input style="float:right; margin-left: 4px;" type="text" asp-for="@Model.Name" />
+                    <span style="display:block" asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="infoAboutUser">
+                <label asp-for="@Model.MiddleName"></label>
+                    <input style="float:right; margin-left: 4px;" type="text" asp-for="@Model.MiddleName" />
+                    <span style="display:block" asp-validation-for="MiddleName" class="text-danger"></span>
+            </div>
+        </div>
+        <div >
+            <div class="infoAboutUser">
+                <label asp-for="@Model.NumberPhone"></label>
+                    <input style="float:right; margin-left: 4px;" type="text" asp-for="@Model.NumberPhone" />
+                    <span style="display:block" asp-validation-for="NumberPhone" class="text-danger"></span>
+            </div>
+
+            <div class="infoAboutUser">
+                <label asp-for="@Model.Email"></label>
+                    <input style="float:right; margin-left: 4px;" type="text" asp-for="@Model.Email" />
+                    <span style="display:block" asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="infoAboutUser">
+                <label asp-for="@Model.DateOfBth"></label>
+                    <input style="float:right; margin-left: 4px;" type="date" asp-for="@Model.DateOfBth" />
+                    <span style="display:block" asp-validation-for="DateOfBth" class="text-danger"></span>
+            </div>
+        </div>
+        </div>
+        
+        <input type="submit" class="btn saveButton text-white" value="Сохранить изменения"/>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    }
