@@ -68,8 +68,8 @@ namespace High_precisionMechanics.Controllers
                     obj.HeadOfQualityDepartment = true;
                     obj.HeadOfLogistics = true;
                     obj.HeadOfTheEconomicDepartment = true;
-                    int x = rand.Next(1,5);
-                    switch (x)
+
+                    switch (rand.Next(1, 5))
                     {
                         case 1:
                             obj.Status = "Ждет отправки";
@@ -85,7 +85,7 @@ namespace High_precisionMechanics.Controllers
                             break;
                     }
                 }
-
+                
                 _appDb.Orders.Add(obj);
                 _appDb.SaveChanges();
 
