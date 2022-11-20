@@ -22,7 +22,7 @@ namespace High_precisionMechanics.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var obj = _appDb.Users.Find(1);
+            var obj = _appDb.Users.FirstOrDefault();
 
             if (obj == null) return NotFound();
 
@@ -59,6 +59,7 @@ namespace High_precisionMechanics.Controllers
                 Random rand = new Random();
                 obj.Price = "";
                 obj.Status = "Отказано";
+                obj.UserId = _appDb.Users.FirstOrDefault().Id;
 
                 if (rand.Next(1, 4) != 1)
                 {
